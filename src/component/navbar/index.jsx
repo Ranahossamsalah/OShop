@@ -3,13 +3,24 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 
 function CollapsibleExample() {
+  const favNumState = useSelector((state) => state.favSlice.favNum);
+  const navigate = useNavigate();
+
+
+
+  const goToShopping = () => {
+    navigate("/ecommerce");
+  };
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">OShop</Navbar.Brand>
+        <Navbar.Brand>
+          <button onClick={goToShopping}> OShop</button>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
@@ -43,6 +54,8 @@ function CollapsibleExample() {
                     d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"
                   />
                 </svg>
+                <button className=" px-1">{favNumState}</button>
+
               </Link>
             </li>
           </Nav>

@@ -7,7 +7,7 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from "./pages/home";
 import SignUp from "./pages/signup";
 import Ecommerce from "./pages/e-commerce";
-import Singleproduct from "./pages/e-commerce/single-product";
+import ProductDetails from "./pages/e-commerce/productDetails";
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/favourite" element={<Counter />}></Route>
         <Route path="/ecommerce" element={<Ecommerce />}></Route>
-        <Route path="/ecommerce/:id" element={<Singleproduct />}></Route>
+        <Route path="/ecommerce/:id" element={<ProductDetails />}></Route>
 
       </Routes>
     </BrowserRouter>

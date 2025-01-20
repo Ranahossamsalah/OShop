@@ -3,6 +3,7 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "../../App.css";
+import { Link } from "react-router-dom";
 function Home() {
   return (
     <div className="bg d-flex flex-column text-center">
@@ -43,14 +44,23 @@ function Home() {
           <i class="bi bi-facebook"></i>
         </Card.Footer>
       </Card>
-      <button className=""
-      style={{fontSize:"25px",
-        width:"20%",
-        margin:"auto",
-        backgroundColor:"orange",
-        borderRadius:"10px"
-      }}
-      > start shopping</button>
+      <Link to="/ecommerce" style={{  margin: "auto" }}>
+        <button
+          className=""
+          style={{
+            fontSize: "25px",
+            fontWeight:"500",
+            padding:"5px 20px ",
+            margin: "auto",
+            backgroundColor: "orange",
+            borderRadius: "15px",
+            color:"black"
+          }}
+        >
+          {" "}
+          start shopping
+        </button>
+      </Link>
     </div>
   );
 }
