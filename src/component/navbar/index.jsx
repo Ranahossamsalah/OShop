@@ -5,12 +5,10 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-
+import "./navbar.css";
 function CollapsibleExample() {
   const favNumState = useSelector((state) => state.favSlice.favNum);
   const navigate = useNavigate();
-
-
 
   const goToShopping = () => {
     navigate("/ecommerce");
@@ -23,24 +21,24 @@ function CollapsibleExample() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto">
+          <Nav className="ms-auto nav">
             <li>
-              <Link className="text-warning fs-7 p-3 " to="/home">
+              <Link className=" link fs-7 p-3 " to="/home">
                 Home
               </Link>
             </li>
             <li>
-              <Link className="text-warning fs-7 p-3 " to="/signup">
+              <Link className=" link fs-7 p-3 " to="/signup">
                 SignUp
               </Link>
             </li>
             <li>
-              <Link className="text-warning fs-7 p-3" to="/ecommerce">
+              <Link className="link fs-7 p-3" to="/ecommerce">
                 Start Shopping
               </Link>
             </li>
             <li>
-              <Link className="text-warning fs-7 p-3" to="/favourite">
+              <Link className=" link fs-7 p-3" to="/favourite">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -55,7 +53,6 @@ function CollapsibleExample() {
                   />
                 </svg>
                 <button className=" px-1">{favNumState}</button>
-
               </Link>
             </li>
           </Nav>

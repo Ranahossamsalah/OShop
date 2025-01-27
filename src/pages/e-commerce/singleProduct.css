@@ -1,13 +1,10 @@
-.singleProduct{
 
-}
 .singleProduct:hover{
-    border-color: orangered;
     background-color: rgb(250, 250, 250);
 }
-.bi-suit-heart-fill:hover{
+.bi-suit-heart-fill:hover ,bi-cart-plus:hover{
     fill:orangered
 }
-.bi-suit-heart-fill:focus{
+.btnActice{
     fill:orangered
 }

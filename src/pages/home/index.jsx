@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "../../App.css";
 import { Link } from "react-router-dom";
+import "./home.css"
 function Home() {
   return (
     <div className="bg d-flex flex-column text-center">
@@ -46,19 +47,19 @@ function Home() {
       </Card>
       <Link to="/ecommerce" style={{  margin: "auto" }}>
         <button
-          className=""
+          className="startShopping"
           style={{
             fontSize: "25px",
-            fontWeight:"500",
-            padding:"5px 20px ",
+            fontWeight:"400",
+            padding:"10px 40px ",
             margin: "auto",
-            backgroundColor: "orange",
-            borderRadius: "15px",
-            color:"black"
+            backgroundColor: "black",
+            borderRadius: "25px",
+            color:"orangered"
           }}
         >
           {" "}
-          start shopping
+          Start Shopping
         </button>
       </Link>
     </div>

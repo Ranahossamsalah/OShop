@@ -3,20 +3,34 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addFavId, addFavNum } from "../../redux/slices/favSlice";
+import { addFavId, addFavNum , deleteFavId, deleteFavNum } from "../../redux/slices/favSlice";
 import { useEffect } from "react";
 import "./singleProduct.css";
 
 function SingleProduct(props) {
   const dispatch = useDispatch();
   const favState = useSelector((state) => state.favSlice.favId);
-
-  const [id, setid] = useState("");
+  const [favActive, setfavActive] = useState(false);
+  const [cartActive, setcartActive] = useState(false);
 
   const addToFavorite = () => {
     console.log(props.id, favState);
-    dispatch(addFavId(props.id));
-    dispatch(addFavNum());
+   
+    if (favActive === false) {
+      setfavActive(true);
+      dispatch(addFavId(props.id));
+      dispatch(addFavNum());
+    } else {
+      setfavActive(false);
+      dispatch(deleteFavId(props.id))
+      dispatch(deleteFavNum());
+    }
+  };
+  const addToCart = () => {
+    // console.log(props.id, favState);
+    // dispatch(addFavId(props.id));
+    // dispatch(addFavNum());
+    !cartActive ? setcartActive(true) : setcartActive(false);
   };
   return (
     <div className="singleProduct m-1">
@@ -76,18 +90,19 @@ function SingleProduct(props) {
       "
         style={{ padding: "1" }}
       >
-        <small class="text-body-secondary d-flex">
+        <small class="text-body-secondary d-flex ">
           <h3
             className=" flex-grow-1 "
             style={{
-              fontSize: "1.2em",
-              color: "orange",
+              fontSize: "1em",
+              color: "orangered",
             }}
           >
-            {props.price}
+            Price : {props.price} $
           </h3>
-          <button cla onClick={addToFavorite} style={{}}>
+          <button onClick={addToFavorite} style={{}}>
             <svg
+              className={favActive ? "btnActice" : ""}
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
@@ -98,8 +113,9 @@ function SingleProduct(props) {
               <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1" />
             </svg>
           </button>
-          <button className=" ms-2 " hover-zoom>
+          <button onClick={addToCart} className=" ms-2 " hover-zoom>
             <svg
+              className={cartActive ? "btnActice" : ""}
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"
