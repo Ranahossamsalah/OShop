@@ -1,12 +1,14 @@
 /** @format */
 
+import React from "react";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import SingleProduct from "../e-commerce/singleProduct";
+import "./cart.css";
 
-const Favourite = (props) => {
+function Cart() {
   const [products, setproduct] = useState([]);
-  const favState = useSelector((state) => state.favSlice.favId);
+  const cartState = useSelector((state) => state.favSlice.cartId);
 
   useEffect(() => {
     fetchproducts();
@@ -19,24 +21,25 @@ const Favourite = (props) => {
 
   return (
     <div className="product-wrapper container  ">
-      <h2 className=" text-center mt-5  ">Favorites </h2>
+      <h2 className=" text-center mt-5  ">Cart </h2>
       <p className=" text-center mb-5  ">
-        You can add or delete any product and add it to cart if you want to buy{" "}
+        You can remove or buy any product from cart using one of the availble
+        buying method{" "}
       </p>
-      <div className=" products  w-50 m-auto" style={{}}>
+      <div className=" products  w-100 m-auto " style={{}}>
         {products.map((item, index) => {
-          if (favState.includes(item.id)) {
+          if (cartState.includes(item.id)) {
             return (
               <>
                 {" "}
                 <div
-                  className="w-100 shadow-sm bg-white rounded     "
+                  className="w-100 cartContainer     "
                   style={{ margin: "auto", display: "inline-block" }}
                 >
                   <SingleProduct
                     id={item.id}
                     title={item.title}
-                    desc={item.description}
+                    // desc={item.description}
                     price={item.price}
                     image={item.image}
                   />
@@ -48,6 +51,6 @@ const Favourite = (props) => {
       </div>
     </div>
   );
-};
+}
 
-export default Favourite;
+export default Cart;

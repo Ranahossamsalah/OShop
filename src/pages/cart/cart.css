@@ -1,0 +1,6 @@
+.cartContainer{
+    max-height: 200px;
+    display: flex;
+
+    /* background-color: brown; */
+}

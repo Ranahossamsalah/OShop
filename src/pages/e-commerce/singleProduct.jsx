@@ -3,34 +3,67 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addFavId, addFavNum , deleteFavId, deleteFavNum } from "../../redux/slices/favSlice";
+import {
+  addCartId,
+  addCartNum,
+  addFavId,
+  addFavNum,
+  deleteFavId,
+  deleteFavNum,
+} from "../../redux/slices/favSlice";
 import { useEffect } from "react";
 import "./singleProduct.css";
 
 function SingleProduct(props) {
   const dispatch = useDispatch();
   const favState = useSelector((state) => state.favSlice.favId);
+  const cartState = useSelector((state) => state.favSlice.cartId);
+
   const [favActive, setfavActive] = useState(false);
   const [cartActive, setcartActive] = useState(false);
 
+  useEffect(() => {
+    if (favState.includes(props.id)) {
+      setfavActive(true);
+    } else {
+      setfavActive(false);
+    }
+  }, [favState]);
+  useEffect(() => {
+    if (cartState.includes(props.id)) {
+      setcartActive(true);
+    } else {
+      setcartActive(false);
+    }
+  }, [cartState]);
+
   const addToFavorite = () => {
     console.log(props.id, favState);
-   
+
     if (favActive === false) {
       setfavActive(true);
       dispatch(addFavId(props.id));
       dispatch(addFavNum());
     } else {
       setfavActive(false);
-      dispatch(deleteFavId(props.id))
+      dispatch(deleteFavId(props.id));
       dispatch(deleteFavNum());
     }
   };
   const addToCart = () => {
-    // console.log(props.id, favState);
-    // dispatch(addFavId(props.id));
+    console.log(props.id, favState);
+    dispatch(addCartId(props.id));
     // dispatch(addFavNum());
     !cartActive ? setcartActive(true) : setcartActive(false);
+    if (cartActive === false) {
+      setcartActive(true);
+      dispatch(addCartId(props.id));
+      dispatch(addCartNum());
+    } else {
+      setfavActive(false);
+      dispatch(deleteCartId(props.id));
+      // dispatch(deleteCartNum());
+    }
   };
   return (
     <div className="singleProduct m-1">
@@ -57,7 +90,10 @@ function SingleProduct(props) {
             src={props.image}
           ></img>
         </div>
-        <div className="d-flex flex-column bg-light " style={{ height: "30%" }}>
+        <div
+          className=" d-flex flex-column bg-light  "
+          style={{ height: "30%" }}
+        >
           <h3
             className="p-1 "
             style={{
@@ -95,7 +131,7 @@ function SingleProduct(props) {
             className=" flex-grow-1 "
             style={{
               fontSize: "1em",
-              color: "orangered",
+              color: "black",
             }}
           >
             Price : {props.price} $
