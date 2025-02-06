@@ -1,10 +1,83 @@
+/** @format */
 
-.singleProduct:hover{
-    background-color: rgb(250, 250, 250);
+.singleProduct:hover {
+  background-color: rgb(250, 250, 250);
 }
-.bi-suit-heart-fill:hover ,bi-cart-plus:hover{
-    fill:orangered
+.singleProduct .productImg {
+  height: 200px;
 }
-.btnActice{
-    fill:orangered
+
+.singleProduct img {
+  margin: auto;
+  padding:10px;
+  height: 80%;
+  object-fit: contain;
+}
+
+.bi-suit-heart-fill:hover,
+bi-cart-plus:hover {
+  fill: orangered;
+}
+.btnActice {
+  fill: orangered;
+}
+/* /////////////////////////////////////////////////////////cartUi////////////////////////////////////////////////// */
+
+.cartUi {
+  display: flex;
+  background-color: rgb(228, 228, 228);
+  height: 100px;
+  width: 100%;
+}
+.cartUi div {
+  display: flex;
+  margin: 2px;
+}
+.cartUi div.productTitle {
+  width: 50%;
+  flex-grow: 1;
+}
+.cartUi a {
+  width: 80px;
+  flex-grow: 1;
+  display: flex;
+}
+
+.cartUi a img {
+  padding: 3px;
+  margin: 0px;
+  height: 50%;
+  width: 80px;
+}
+.cartUi div.card-footer {
+  width: 10%;
+}
+.cartUi div.card-footer small {
+  flex-direction: column;
+}
+/* ///////////////////////////////////////////productDetailsUi///////////////////////////////////////////////// */
+.productDetailsUi .productImg {
+  height: 0px;
+}
+.productDetailsUi a img {
+  display: none;
+}
+.productDetailsUi:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+/* /////////////////////////////////////////////////responsive///////////////////////////////////////////////// */
+@media screen and (max-width: 768px) {
+  .cartUi a {
+    /* width:20px; */
+  }
+
+  .cartUi div.card-footer {
+    width: 20%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .cartUi div.card-footer {
+    width: 25%;
+  }
 }

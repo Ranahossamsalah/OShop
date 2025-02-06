@@ -9,6 +9,7 @@ export const favSlice = createSlice({
     cartId: [],
     favNum: "",
     cartNum: "",
+    totalPrice: 0,
   },
 
   reducers: {
@@ -62,6 +63,10 @@ export const favSlice = createSlice({
       console.log(state.favNum);
       console.log("====================================");
     },
+    addPrice: (state, action) => {
+      state.totalPrice = state.totalPrice + action.payload;
+      (state.totalPrice).toFixed(0)
+    },
     // deleteCartNum: (state) => {
     //   state.cartNum--;
     //   console.log("====================================");
@@ -86,5 +91,6 @@ export const {
   deleteFavNum,
   deleteCartId,
   deleteCartNum,
+  addPrice
 } = favSlice.actions;
 export default favSlice.reducer;

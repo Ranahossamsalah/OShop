@@ -15,6 +15,10 @@ a {
   background-image: url("../public/bg.jpg");
   object-fit: cover;
 }
+.container{
+  margin: auto;
+  width: 80%;
+}
 button{
   all:unset;
 }

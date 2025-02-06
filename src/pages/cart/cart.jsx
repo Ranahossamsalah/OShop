@@ -8,7 +8,10 @@ import "./cart.css";
 
 function Cart() {
   const [products, setproduct] = useState([]);
+  const [totalPrice, settotalPrice] = useState(0);
+
   const cartState = useSelector((state) => state.favSlice.cartId);
+  const totalPriceState = useSelector((state) => state.favSlice.totalPrice);
 
   useEffect(() => {
     fetchproducts();
@@ -18,7 +21,15 @@ function Cart() {
       .then((res) => res.json())
       .then((json) => setproduct(json));
   };
+  // useEffect(() => {
 
+  //   products.map((item, index) => {
+  //     if (cartState.includes(item.id)) {
+  //       settotalPrice(item.id)
+     
+  //     }
+  //   });
+  // }, cartState);
   return (
     <div className="product-wrapper container  ">
       <h2 className=" text-center mt-5  ">Cart </h2>
@@ -26,20 +37,25 @@ function Cart() {
         You can remove or buy any product from cart using one of the availble
         buying method{" "}
       </p>
-      <div className=" products  w-100 m-auto " style={{}}>
+      <div className=" cartContainer  w-100 m-auto ">
         {products.map((item, index) => {
           if (cartState.includes(item.id)) {
+            console.log("====================================");
+            console.log(cartState);
+            console.log("====================================");
+
             return (
               <>
                 {" "}
                 <div
-                  className="w-100 cartContainer     "
+                  className="w-100 cart "
                   style={{ margin: "auto", display: "inline-block" }}
                 >
                   <SingleProduct
                     id={item.id}
                     title={item.title}
-                    // desc={item.description}
+                    uiClassname="cartUi"
+                    desc={item.description}
                     price={item.price}
                     image={item.image}
                   />
@@ -48,6 +64,8 @@ function Cart() {
             );
           }
         })}{" "}
+        <div className="total">Total: {totalPriceState} $</div>
+        <button className="buy"> Buy Now </button>
       </div>
     </div>
   );

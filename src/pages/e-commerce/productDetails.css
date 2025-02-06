@@ -1,0 +1,60 @@
+/** @format */
+
+.productContainer {
+  
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  padding: 50px;
+  background-color: rgb(240, 240, 240);
+  border-radius: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.productContainer .card {
+  height: 400px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: auto;
+  text-align: center;
+}
+.productContainer .card .cardImg{
+  margin: auto;
+  width:250px;
+}
+.productContainer .details {
+  width: 70%;
+  margin: auto;
+}
+.productContainer .details h4 {
+  color: orange;
+  text-transform: capitalize;
+}
+/* /////////////////////////////////////////////////responsive///////////////////////////////////////////////// */
+@media screen and (max-width: 1200px) {
+  .productContainer .card {
+    height: 400px;
+    margin-right: 50px;
+
+  }
+  .productContainer .card .cardImg {
+    padding-top: 20px;
+    width: 200px;
+    margin: auto;
+
+  }
+}
+@media screen and (max-width: 768px) {
+  .productContainer {
+  
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+
+}
+@media screen and (max-width: 400px) {
+}

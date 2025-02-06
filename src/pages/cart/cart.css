@@ -1,6 +1,18 @@
-.cartContainer{
-    max-height: 200px;
-    display: flex;
+/** @format */
 
-    /* background-color: brown; */
+.cartContainer .cart {
+  display: flex;
+}
+
+.cartContainer .total {
+  display: block;
+  padding: 5px;
+  text-align: end;
+  font-weight: 800;
+  background-color: lightgrey;
+}
+.cartContainer .buy {
+  background-color: orange;
+  padding: 5px 60px;
+  margin-top: 5px;
 }
