@@ -6,10 +6,24 @@
 .singleProduct .productImg {
   height: 200px;
 }
-
+.singleProduct h3 {
+  font-size: 0.9em;
+  color: black;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.singleProduct p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: grey;
+}
 .singleProduct img {
+  width: 100%;
   margin: auto;
-  padding:10px;
+  padding: 10px;
   height: 80%;
   object-fit: contain;
 }
@@ -50,7 +64,7 @@ bi-cart-plus:hover {
   width: 80px;
 }
 .cartUi div.card-footer {
-  width: 10%;
+  width: 15%;
 }
 .cartUi div.card-footer small {
   flex-direction: column;
@@ -67,17 +81,43 @@ bi-cart-plus:hover {
 }
 
 /* /////////////////////////////////////////////////responsive///////////////////////////////////////////////// */
+@media screen and (max-width: 1000px) {
+  .singleProduct .card-footer .card-footer-small {
+    display: block;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .singleProduct .card-footer .card-footer-small .btns {
+    width: 100%;
+  }
+  .cartUi div.card-footer {
+    width:20%;
+  }
+}
+
 @media screen and (max-width: 768px) {
+  .singleProduct h3 {
+    font-size: 0.8em;
+    margin-bottom: 0px;
+  }
+  .singleProduct p {
+    font-size: 0.7em;
+    margin-bottom: 5px;
+  }
+
+
   .cartUi a {
     /* width:20px; */
   }
 
   .cartUi div.card-footer {
-    width: 20%;
+    width: 30%;
   }
 }
 @media screen and (max-width: 400px) {
   .cartUi div.card-footer {
-    width: 25%;
+    padding: 10px 0px;
+    width: 30%;
+    overflow: hidden;
   }
 }

@@ -95,29 +95,8 @@ function SingleProduct(props) {
           className=" d-flex flex-column bg-light productTitle "
           // style={{ height: "30%" }}
         >
-          <h3
-            className="p-1 "
-            style={{
-              // margin: "auto",
-              fontSize: "0.9em",
-              color: "black",
-              textDecoration: "none",
-              whiteSpace: "nowrap",
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-            }}
-          >
-            {props.title}
-          </h3>
-          <p
-            className="p-1 "
-            style={{
-              whiteSpace: "nowrap",
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-              color: "grey",
-            }}
-          >
+          <h3 className="p-1 ">{props.title}</h3>
+          <p className="p-1 " >
             {props.desc}
           </p>
         </div>
@@ -126,9 +105,9 @@ function SingleProduct(props) {
         class="card-footer  
       "
       >
-        <small class="text-body-secondary d-flex ">
+        <small class=" card-footer-small text-body-secondary d-flex ">
           <h3
-            className=" flex-grow-1 "
+            className="  flex-grow-1 "
             style={{
               fontSize: "1em",
               color: "black",
@@ -136,8 +115,8 @@ function SingleProduct(props) {
           >
             Price : {props.price} $
           </h3>
-          <div>
-            <button onClick={addToFavorite} style={{}}>
+          <div className="btns">
+            <button onClick={addToFavorite} >
               <svg
                 className={favActive ? "btnActice" : ""}
                 xmlns="http://www.w3.org/2000/svg"

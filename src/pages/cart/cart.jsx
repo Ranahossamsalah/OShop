@@ -65,7 +65,7 @@ function Cart() {
           }
         })}{" "}
         <div className="total">Total: {totalPriceState} $</div>
-        <button className="buy"> Buy Now </button>
+        {/* <button className="buy"> Buy Now </button> */}
       </div>
     </div>
   );

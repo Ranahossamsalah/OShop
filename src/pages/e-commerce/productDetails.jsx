@@ -23,11 +23,7 @@ const productDetails = () => {
     <div className="container productContainer">
       <Card style={{ width: "18rem" }} className="card">
         <Card.Img variant="top" className="cardImg" src={product.image} />
-        <Card.Body>
-          {/* <Card.Title>{product.title}</Card.Title> */}
-          {/* <Card.Text>Price : {product.discription} </Card.Text> */}
-          {/* <h2>{product.price}</h2> */}
-        </Card.Body>
+      
       </Card>{" "}
       <div className="details">
         <h2> {product.title}</h2>

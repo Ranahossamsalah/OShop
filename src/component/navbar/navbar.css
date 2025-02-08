@@ -1,7 +1,40 @@
-.navBar{
-   color: rgb(8, 8, 8);
+/** @format */
+
+.navBar {
+  color: rgb(8, 8, 8);
 }
 
-.navbar li .link{
-    color:orange
+.navbar li .link {
+  color: orange;
+}
+/* ////////////////////////////////////////responsive/////////////////////////////// */
+
+@media screen and (max-width: 1000px) {
+  .navBar {
+    padding: 2px;
+  }
+  .navBar .navBarTitles {
+    align-items: end;
+    width: 30%;
+    text-align: center;
+    margin-right: 50px;
+  }
+  .navBar li {
+    margin: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.096);
+    width: 90%;
+  }
+  .navBar li .link {
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .navBar .navBarTitles {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .navBar .navBarTitles {
+    width: 80%;
+  }
 }

@@ -13,25 +13,26 @@ function CollapsibleExample() {
   const goToShopping = () => {
     navigate("/ecommerce");
   };
+
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar className="navBar"collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand>
+        <Navbar.Brand >
           <button onClick={goToShopping}> OShop</button>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto nav">
+          <Nav className="ms-auto nav navBarTitles">
             <li>
               <Link className=" link fs-7 p-3 " to="/home">
                 Home
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link className=" link fs-7 p-3 " to="/signup">
                 SignUp
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link className="link fs-7 p-3" to="/ecommerce">
                 Start Shopping

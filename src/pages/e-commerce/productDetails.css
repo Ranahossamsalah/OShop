@@ -1,7 +1,6 @@
 /** @format */
 
 .productContainer {
-  
   margin-top: 50px;
   display: flex;
   justify-content: space-around;
@@ -11,18 +10,22 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .productContainer .card {
-  height: 400px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin: auto;
+  margin-right: 50px;
   text-align: center;
 }
-.productContainer .card .cardImg{
+.productContainer .card .cardImg {
+  padding: 20px 0px;
   margin: auto;
-  width:250px;
+  width: 230px;
 }
 .productContainer .details {
   width: 70%;
   margin: auto;
+}
+.productContainer .details h2 {
+  font-weight: 700;
 }
 .productContainer .details h4 {
   color: orange;
@@ -31,30 +34,46 @@
 /* /////////////////////////////////////////////////responsive///////////////////////////////////////////////// */
 @media screen and (max-width: 1200px) {
   .productContainer .card {
-    height: 400px;
-    margin-right: 50px;
-
+    margin-right: 30px;
   }
   .productContainer .card .cardImg {
-    padding-top: 20px;
-    width: 200px;
+    width: 180px;
     margin: auto;
-
+  }
+  .productContainer .details {
+    width: 85%;
   }
 }
 @media screen and (max-width: 768px) {
   .productContainer {
-  
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-around;
-    padding: 50px;
-    background-color: rgb(240, 240, 240);
-    border-radius: 50px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 35px;
+    display: block;
+    padding: 50px 0px;
   }
-
-
+  .productContainer .card {
+    margin: auto;
+    border-radius: 20px;
+    margin-bottom: 30px;
+  }
+  .productContainer .card .cardImg {
+    width: 250px;
+  }
 }
 @media screen and (max-width: 400px) {
+  .productContainer {
+    margin-top: 20px;
+  }
+  .productContainer .card {
+    padding-top: 0;
+    margin-bottom: 10px;
+  }
+  .productContainer .card .cardImg {
+    width: 200px;
+  }
+  .productContainer .details h2 {
+    font-size: 20px;
+  }
+  .productContainer .details p {
+    font-size: 14px;
+  }
 }

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import SingleProduct from "./singleProduct";
+import "./e-commerce.css"
 
 const Ecommerce = () => {
   const [products, setproduct] = useState([]);
@@ -19,13 +20,13 @@ const Ecommerce = () => {
     <div className="product-wrapper container  ">
       <h2 className=" text-center mt-5  ">OShop </h2>
       <p className=" text-center mb-5  ">Online Shopping website</p>
-      <div className=" products  row" style={{}}>
+      <div className=" products  row" >
         {products.map((item, index) => {
           return (
             <>
               {" "}
               <div
-                className=" col-3  shadow-sm bg-white rounded     "
+                className=" col-md-3 col-sm-4 col-xs-4  shadow-sm bg-white rounded     "
                 style={{ margin: "auto", display: "inline-block" }}
               >
                 <SingleProduct
